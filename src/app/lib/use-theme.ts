@@ -10,8 +10,13 @@ function notify() {
   for (const l of listeners) l();
 }
 
-function getSnapshot(): Theme {
+export function getTheme(): Theme {
+  if (typeof document === "undefined") return DEFATULT_THEME;
   return document.documentElement.classList.contains("dark") ? "dark" : "light";
+}
+
+function getSnapshot(): Theme {
+  return getTheme();
 }
 
 function getServerSnapshot(): Theme {
@@ -43,10 +48,10 @@ export function setTheme(theme: Theme) {
   } catch (e) {}
 
   document.documentElement.classList.toggle("dark", theme === "dark");
+  notify();
 }
 
 export function toggleTheme() {
-  console.log("entra", getServerSnapshot());
   setTheme(getSnapshot() === "dark" ? "light" : "dark");
 }
 

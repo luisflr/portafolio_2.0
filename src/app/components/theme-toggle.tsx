@@ -1,19 +1,18 @@
 "use client";
 
-import { toggleTheme, useTheme } from "@/app/lib/use-theme";
+import { Moon, Sun } from "lucide-react";
+import { useThemeTransition } from "@/app/lib/use-theme-transition";
 
 export function ThemeToggle() {
-  const theme = useTheme();
+  const { isDark, handleToggle } = useThemeTransition();
 
   return (
     <button
-      onClick={toggleTheme}
-      aria-label={
-        theme === "dark" ? "Cambiar a tema claro" : "Cambiar a tema oscuro"
-      }
-      className="rounded-lg border border-border px-3 py-1.5 text-sm text-foreground hover:bg-muted transition-colors"
+      onClick={handleToggle}
+      aria-label={isDark ? "Activar tema claro" : "Activar tema oscuro"}
+      className="grid size-9 place-items-center rounded-lg border border-border text-foreground hover:bg-muted transition-colors"
     >
-      {theme === "dark" ? "Claro" : "Oscuro"}
+      {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
     </button>
   );
 }
