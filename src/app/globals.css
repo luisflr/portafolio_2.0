@@ -21,14 +21,14 @@
 .dark {
   color-scheme: dark;
 
-  --background: #0a0a0b;
+  --background: #0a0e17;
   --foreground: #fafafa;
   --muted: #18181b;
   --muted-foreground: #a1a1aa;
   --card: #111113;
   --border: #27272a;
   --primary: #22d3ee;
-  --primary-foreground: #0a0a0b;
+  --primary-foreground: #0a0e17;
   --accent: #38bdf8;
   --success: #34d399;
   --ring: #22d3ee;
