@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ThemeToggle } from "./components/theme-toggle";
+import { ThemeToggle } from "../components/theme-toggle";
 
 export default function Home() {
   return (

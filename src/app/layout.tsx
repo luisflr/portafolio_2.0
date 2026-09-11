@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { themeScript } from "./lib/theme";
+import { themeScript } from "../lib/theme";
 
 export const metadata: Metadata = {
   title: "Luis Flores Rodríguez",

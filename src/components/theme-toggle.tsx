@@ -1,7 +1,7 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useThemeTransition } from "@/app/lib/use-theme-transition";
+import { useThemeTransition } from "@/lib/use-theme-transition";
 
 export function ThemeToggle() {
   const { isDark, handleToggle } = useThemeTransition();
