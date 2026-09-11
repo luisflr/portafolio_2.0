@@ -1,26 +1,60 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
+  color-scheme: light;
+
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0a0a0b;
+  --muted: #f4f4f5;
+  --muted-foreground: #52525b;
+  --card: #ffffff;
+  --border: #e4e4e7;
+  --primary: #0891b2;
+  --primary-foreground: #ffffff;
+  --accent: #0284c7;
+  --success: #059669;
+  --ring: #0891b2;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --background: #0a0a0b;
+  --foreground: #fafafa;
+  --muted: #18181b;
+  --muted-foreground: #a1a1aa;
+  --card: #111113;
+  --border: #27272a;
+  --primary: #22d3ee;
+  --primary-foreground: #0a0a0b;
+  --accent: #38bdf8;
+  --success: #34d399;
+  --ring: #22d3ee;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-success: var(--success);
+  --color-ring: var(--ring);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: var(--color-border);
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: Arial, Helvetica, sans-serif;
+  }
 }
