@@ -1,6 +1,6 @@
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { Badge } from "../ui/badge";
-import { getExperienceForTerminal } from "@/lib/data/experience";
+import { getExperience } from "@/lib/data/experience";
 import { Terminal } from "../ui/terminal";
 
 export async function Hero() {
@@ -8,7 +8,7 @@ export async function Hero() {
   const now = new Date();
   const years = now.getFullYear() - startDate.getFullYear();
   const experience = null;
-  // const experience = await getExperienceForTerminal();
+  // const experience = await getExperience();
   return (
     <section
       id="sobre-mi"

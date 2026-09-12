@@ -1,15 +1,11 @@
-import { ExperienceItem } from "../../../types/content";
+import { ExperienceItem } from "@/types/content";
+import { baseUrl } from "@/lib/constants";
 
-export async function getExperienceForTerminal(): Promise<
-  ExperienceItem[] | null
-> {
+export async function getExperience(): Promise<ExperienceItem[] | null> {
   try {
-    const response = await fetch(
-      `${process.env.BACKEND_URL}/api/experience-for-terminal/`,
-      {
-        next: { tags: ["experience"] },
-      }
-    );
+    const response = await fetch(`${baseUrl}/api/experience-for-terminal/`, {
+      next: { tags: ["experience"] },
+    });
     if (!response.ok) return null;
     return response.json();
   } catch (e) {
