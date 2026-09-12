@@ -46,6 +46,13 @@
   --color-accent: var(--accent);
   --color-success: var(--success);
   --color-ring: var(--ring);
+
+  /* Fuentes  */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  /* Animaciones  */
+  --animate-cursor-flicker: cursor-flicker 1s steps(1) infinite;
 }
 
 @layer base {
@@ -58,7 +65,7 @@
   body {
     background: var(--color-background);
     color: var(--color-foreground);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--font-sans);
   }
   @media (prefers-reduced-motion: reduce) {
     html {
@@ -75,4 +82,15 @@
 ::view-transition-new(root) {
   animation: none;
   mix-blend-mode: normal;
+}
+
+@keyframes cursor-flicker {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
