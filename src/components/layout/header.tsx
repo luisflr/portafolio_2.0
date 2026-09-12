@@ -37,14 +37,15 @@ export function Header() {
 
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/tu-usuario"
+            href="https://github.com/luisflr"
+            target="_blank"
             aria-label="GitHub"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             <GithubIcon className="size-4" />
           </a>
           <a
-            href="https://linkedin.com/in/tu-usuario"
+            href="https://www.linkedin.com/in/luis-flores-rodriguez/"
             aria-label="LinkedIn"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
