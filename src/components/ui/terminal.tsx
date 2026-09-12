@@ -5,7 +5,7 @@ import {
   TerminalLine,
   renderExperience,
 } from "@/lib/terminal-commands";
-import { ExperienceItem } from "../../../types/content";
+import { ExperienceItem } from "../../types/content";
 import { ReactNode, useEffect, useRef, useState } from "react";
 
 export function Terminal({

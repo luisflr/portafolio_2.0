@@ -6,3 +6,5 @@ export const SECTIONS = [
 ];
 
 export const SECTION_IDS = SECTIONS.map((section) => section.id);
+
+export const baseUrl = process.env.BACKEND_URL;

@@ -59,6 +59,9 @@
   * {
     border-color: var(--color-border);
   }
+  :root {
+    interpolate-size: allow-keywords;
+  }
   html {
     scroll-behavior: smooth;
   }
@@ -93,4 +96,21 @@
   100% {
     opacity: 0;
   }
+}
+
+::details-content {
+  overflow: hidden;
+  block-size: 0;
+  transition: block-size 0.3s ease, content-visibility 0.3s allow-discrete;
+}
+
+details[open]::details-content {
+  block-size: auto;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+summary {
+  list-style: none;
 }

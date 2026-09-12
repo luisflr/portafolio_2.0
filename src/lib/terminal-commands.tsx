@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ExperienceItem } from "../../types/content";
+import { ExperienceItem } from "../types/content";
 
 export interface TerminalLine {
   type: "command" | "output";
