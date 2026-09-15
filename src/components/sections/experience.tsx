@@ -5,11 +5,13 @@ export async function Experience() {
   // const items = await getExperience();
   const items = MOCK_EXPERIENCE;
 
-  // Si el backend cae, no renderizamos la sección entera (o un fallback mínimo).
   if (!items || items.length === 0) return null;
 
   return (
-    <section id="experiencia" className="mx-auto max-w-5xl px-6 py-24">
+    <section
+      id="experiencia"
+      className="mx-auto max-w-5xl px-6 py-24 mt-13 border-b"
+    >
       <h2 className="mb-12 text-4xl font-bold tracking-tight text-foreground">
         Experiencia Laboral
       </h2>
