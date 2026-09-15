@@ -1,11 +1,6 @@
 import { ReactNode } from "react";
 import { ExperienceItem } from "../types/content";
 
-export interface TerminalLine {
-  type: "command" | "output";
-  content: ReactNode;
-}
-
 const startDate: Date = new Date(2021, 7, 1);
 const now = new Date();
 const years = now.getFullYear() - startDate.getFullYear();

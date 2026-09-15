@@ -12,7 +12,7 @@ export async function Hero() {
   return (
     <section
       id="sobre-mi"
-      className="mx-auto grid min-h-screen max-w-6xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2"
+      className="mx-auto grid min-h-screen max-w-6xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 border-b"
     >
       <div className="order-1 lg:order-1">
         {/** Badge sobre mi estado actual */}

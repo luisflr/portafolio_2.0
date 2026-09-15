@@ -1,11 +1,7 @@
 "use client";
 
-import {
-  STATIC_COMMANDS,
-  TerminalLine,
-  renderExperience,
-} from "@/lib/terminal-commands";
-import { ExperienceItem } from "../../types/content";
+import { STATIC_COMMANDS, renderExperience } from "@/lib/terminal-commands";
+import { ExperienceItem, TerminalLine } from "@/types/content";
 import { ReactNode, useEffect, useRef, useState } from "react";
 
 export function Terminal({
