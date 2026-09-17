@@ -2,6 +2,7 @@ import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import type { Metadata } from "next";
 import { themeScript } from "@/lib/theme";
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Luis Flores Rodríguez",
@@ -28,7 +29,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <Script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>

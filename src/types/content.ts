@@ -3,7 +3,8 @@ import { ReactNode } from "react";
 export interface ExperienceItem {
   role: string;
   company: string;
-  period: string;
+  initialDate: string;
+  endDate: string;
   description: string;
   achievements: string[];
   stack: string[];

@@ -1,11 +1,13 @@
 import { getExperience } from "@/lib/data/experience";
-import { MOCK_EXPERIENCE } from "@/lib/data/mock-data";
+import { formatDate, mapExperienceItem } from "@/lib/utils";
+import { ExperienceItem } from "@/types/content";
 
 export async function Experience() {
-  // const items = await getExperience();
-  const items = MOCK_EXPERIENCE;
+  const items = await getExperience();
+  // const items = MOCK_EXPERIENCE;
 
   if (!items || items.length === 0) return null;
+  const experiences: ExperienceItem[] = items.map(mapExperienceItem);
 
   return (
     <section
@@ -17,12 +19,12 @@ export async function Experience() {
       </h2>
 
       <div className="divide-y divide-border">
-        {items.map((item, i) => (
+        {experiences.map((item, i) => (
           <details key={i} name="experiencia" open={i === 0} className="group">
             <summary className="flex cursor-pointer items-start justify-between gap-4 py-6">
               <div className="flex flex-1 flex-col gap-1 sm:flex-row sm:gap-8">
                 <span className="font-mono text-sm text-muted-foreground sm:w-32 sm:shrink-0">
-                  {item.period}
+                  {formatDate(item.initialDate)} - {formatDate(item.endDate)}
                 </span>
                 <div>
                   <h3 className="text-lg font-bold text-foreground">
@@ -51,9 +53,9 @@ export async function Experience() {
               </ul>
 
               <div className="mt-6 flex flex-wrap gap-2">
-                {item.stack.map((tech) => (
+                {item.stack.map((tech, i) => (
                   <span
-                    key={tech}
+                    key={`${tech}-${i}`}
                     className="rounded-md border border-border px-3 py-1 font-mono text-xs text-muted-foreground"
                   >
                     {tech}
