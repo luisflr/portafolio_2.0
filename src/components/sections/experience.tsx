@@ -1,5 +1,6 @@
 import { getExperience } from "@/lib/data/experience";
-import { formatDate, mapExperienceItem } from "@/lib/utils";
+import { mapExperienceItem } from "@/lib/serializers";
+import { formatDate } from "@/lib/utils";
 import { ExperienceItem } from "@/types/content";
 
 export async function Experience() {
