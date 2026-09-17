@@ -7,8 +7,7 @@ export async function Hero() {
   const startDate: Date = new Date(2021, 7, 1);
   const now = new Date();
   const years = now.getFullYear() - startDate.getFullYear();
-  const experience = null;
-  // const experience = await getExperience();
+  const experience = await getExperience();
   return (
     <section
       id="sobre-mi"
@@ -70,7 +69,7 @@ export async function Hero() {
             Github
           </a>
           <a
-            href="#proyectos"
+            href="mailto:luisflr1997@gmail.com"
             className="px-1 py-2.5 text-[13px] text-muted-foreground transition hover:scale-105 underline underline-offset-8 font-mono"
           >
             Email

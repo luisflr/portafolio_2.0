@@ -17,16 +17,16 @@ export function Stack() {
           Estos son las principales herramientas que he utilizado en mi día a
           día durante todos estos años de trabajo
         </p>
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 gap-3 lg:grid-cols-3">
           {STACKS.map((stack, i) => (
             <div
               key={i}
-              className="max-w-sm border rounded-xl bg-background-card p-6 font-bold text-md flex items-center"
+              className="max-w-sm border rounded-xl bg-background-card p-6 font-bold text-md flex items-center "
             >
               {stack.icon}
               <div>
                 <p>{stack.name}</p>
-                <p className="text-sm text-muted-foreground font-mono font-normal">
+                <p className="text-sm text-muted-foreground font-mono font-normal hidden sm:block">
                   {stack.type}
                 </p>
               </div>

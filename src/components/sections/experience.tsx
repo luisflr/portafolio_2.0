@@ -5,10 +5,11 @@ import { ExperienceItem } from "@/types/content";
 
 export async function Experience() {
   const items = await getExperience();
-  // const items = MOCK_EXPERIENCE;
 
   if (!items || items.length === 0) return null;
-  const experiences: ExperienceItem[] = items.map(mapExperienceItem);
+  const experiences: ExperienceItem[] = items
+    .map(mapExperienceItem)
+    .sort((fi, si) => fi.order - si.order);
 
   return (
     <section
@@ -28,10 +29,10 @@ export async function Experience() {
                   {formatDate(item.initialDate)} - {formatDate(item.endDate)}
                 </span>
                 <div>
-                  <h3 className="text-lg font-bold text-foreground">
+                  <h3 className="text-lg font-semibold text-foreground">
                     {item.role}
                   </h3>
-                  <p className="text-accent">{item.company}</p>
+                  <p className="text-accent text-sm">{item.company}</p>
                 </div>
               </div>
               {/* +/− : el group-open lo cambia según el estado del <details> padre */}

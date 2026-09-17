@@ -19,9 +19,10 @@ export const STATIC_COMMANDS = {
     label: "stack",
     output: (
       <div>
-        <p>- Frontend: React · Next.js · TypeScript</p>
+        <p>- Frontend: React · Next.js · Tailwind · Typescript</p>
         <p>- Móvil: Flutter · React Native</p>
-        <p>- Backend: Django · DRF · PostgreSQL</p>
+        <p>- Backend: Django · Laravel</p>
+        <p>- BD: PostgreSQL · MongoDB</p>
         <p>- Buenas prácticas: testing · clean code · SOLID</p>
       </div>
     ),
@@ -39,23 +40,24 @@ export const STATIC_COMMANDS = {
     label: "contacto",
     output: (
       <div className="space-y-1">
-        <p>- Correo - luisflr@gmail.com</p>
-        <p>- Linkedin - linkedin.com/in/luis-flores-rodriguez/</p>
-        <p>- Github - github.com/luisflr</p>
+        <p>- Correo · luisflr1997@gmail.com</p>
+        <p>- Linkedin · linkedin.com/in/luis-flores-rodriguez/</p>
+        <p>- Github · github.com/luisflr</p>
       </div>
     ),
   },
 } as const;
 
 export function renderExperience(items: ExperienceItem[]): ReactNode {
+  const maxLength = 30;
   return (
     <div className="space-y-2">
       {items.map((item, i) => (
         <div key={i}>
           <p className="text-foreground">
-            {item.role} · <span className="text-primary">{item.company}</span>
+            - {item.role} · {item.company.substring(0, maxLength)}
+            {item.company.length > maxLength ? "..." : ""}
           </p>
-          <p className="text-muted-foreground">{item.period}</p>
         </div>
       ))}
     </div>

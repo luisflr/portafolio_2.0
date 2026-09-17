@@ -10,6 +10,7 @@ export function mapExperienceItem(backendItem: any): ExperienceItem {
     description: backendItem.description,
     achievements: backendItem.achievements,
     stack: backendItem.stack,
+    order: backendItem.order,
   };
 }
 
@@ -22,5 +23,6 @@ export function mapProjects(backendItem: any): ProjectItem {
     image: backendItem.image,
     demoUrl: backendItem.demo_url,
     codeUrl: backendItem.code_url,
+    order: backendItem.order,
   };
 }

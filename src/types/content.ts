@@ -1,6 +1,9 @@
 import { ReactNode } from "react";
 
-export type typesProyect = "work" | "personal";
+export enum TypesProyect {
+  work = "Trabajo",
+  personal = "Personal",
+}
 export interface ExperienceItem {
   role: string;
   company: string;
@@ -9,6 +12,7 @@ export interface ExperienceItem {
   description: string;
   achievements: string[];
   stack: string[];
+  order: number;
 }
 
 export interface TerminalLine {
@@ -26,8 +30,9 @@ export interface ProjectItem {
   title: string;
   description: string;
   stack: string[];
-  typeProject: typesProyect;
+  typeProject: TypesProyect;
   image: string;
   demoUrl: string;
   codeUrl: string;
+  order: number;
 }
