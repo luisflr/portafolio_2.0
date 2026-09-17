@@ -3,7 +3,7 @@ import { baseUrl } from "@/lib/constants";
 
 export async function getExperience(): Promise<ExperienceItem[] | null> {
   try {
-    const response = await fetch(`${baseUrl}/api/experience-for-terminal/`, {
+    const response = await fetch(`${baseUrl}/api/experience/`, {
       next: { tags: ["experience"] },
     });
     if (!response.ok) return null;
