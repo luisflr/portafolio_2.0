@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "http", // Railway te lo sirve por http, no https — ojo con esto
+        hostname: "backendportafolio20-production.up.railway.app",
+        pathname: "/media/**",
+      },
+    ],
+  },
   reactCompiler: true,
 };
 
