@@ -78,17 +78,17 @@ export async function Hero() {
         </div>
 
         <div
-          className="mt-3 flex flex-wrap items-center gap-4 animate-fade-up"
+          className="mt-3 flex flex-wrap items-center gap-4 animate-fade-up "
           style={{ animationDelay: "320ms" }}
         >
           <a
             href="#proyectos"
-            className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90 font-mono"
+            className="inline-flex items-center gap-2 rounded-lg border border-primary px-5 py-2.5 text-sm font-bold text-primary transition hover:opacity-90 font-mono group/hero hover:scale-105 transform duration-300"
           >
             Ver Proyectos
-            <ArrowRight className="size-3" />
+            <ArrowRight className="size-4 group-hover/hero:translate-x-1 transition transform duration-200" />
           </a>
-          <button className="inline-flex items-center gap-2 rounded-lg bg-muted/30 border border-border px-5 py-2.5 text-sm font-bold text-muted-foreground transition-opacity hover:opacity-90 cursor-pointer font-mono">
+          <button className="inline-flex items-center gap-2 rounded-lg bg-background-stack-icon px-5 py-3 text-sm font-bold text-foreground hover:opacity-90 cursor-pointer font-mono hover:scale-105 transition transform duration-300">
             Descargar CV
             <ArrowDown className="size-3" />
           </button>

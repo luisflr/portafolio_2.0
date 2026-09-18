@@ -12,7 +12,7 @@ export function Badge({
   return (
     <span
       className={`inline-flex items-center gap-2 rounded-full 
-      border border-border bg-card/40 px-3 py-1 ${className}`}
+      bg-background-stack-icon px-4 py-2 ${className}`}
       style={style}
     >
       {children}

@@ -10,7 +10,7 @@ export function ThemeToggle() {
     <button
       onClick={handleToggle}
       aria-label={isDark ? "Activar tema claro" : "Activar tema oscuro"}
-      className="grid size-9 place-items-center rounded-lg border border-border text-foreground hover:bg-muted transition-colors"
+      className="grid size-9 place-items-center rounded-lg border border-border text-foreground hover:cursor-pointer hover:bg-background-stack-icon hover:border-background-stack-icon transition-colors"
     >
       {isDark ? <Sun className="size-4" /> : <Moon className="size-4" />}
     </button>

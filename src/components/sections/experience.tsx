@@ -27,7 +27,7 @@ export async function Experience() {
         {experiences.map((item, i) => (
           <FadeUp delay={100 * ((i + 1) / 2)} key={i}>
             <details name="experiencia" open={i === 0} className="group">
-              <summary className="group-hover:bg-ligth-blue transition transform duration-200 flex cursor-pointer items-start justify-between gap-4 py-6">
+              <summary className="group-hover:bg-ligth-blue/50 transition transform duration-200 flex cursor-pointer items-start justify-between gap-4 py-6">
                 <div className="flex flex-1 flex-col gap-1 sm:flex-row sm:gap-8 items-center">
                   <span className="group-hover:translate-x-2 group-hover:text-primary transition transform duration-200 font-mono text-xs text-muted-foreground sm:w-36 sm:shrink-0">
                     {formatDate(item.initialDate)} - {formatDate(item.endDate)}

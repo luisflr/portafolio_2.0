@@ -15,7 +15,8 @@ export function Nav() {
     >
       <a
         href="#sobre-mi"
-        className="font-mono text-sm font-bold tracking-widest text-primary"
+        className="font-mono text-sm font-bold tracking-widest text-primary animate-in-left"
+        style={{ animationDelay: "0ms" }}
       >
         LFR
       </a>
@@ -26,7 +27,11 @@ export function Nav() {
           const isActive = activeId === section.id;
           const number = String(i + 1).padStart(2, "0");
           return (
-            <li key={section.id}>
+            <li
+              key={section.id}
+              className="animate-in-left"
+              style={{ animationDelay: `${120 + i * 90}ms` }}
+            >
               <a
                 href={`#${section.id}`}
                 aria-current={isActive ? "true" : undefined}
