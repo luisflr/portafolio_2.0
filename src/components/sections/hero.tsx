@@ -2,18 +2,26 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 import { Badge } from "../ui/badge";
 
 export async function Hero() {
-  const startDate: Date = new Date(2021, 7, 1);
+  const startDate = new Date(2021, 7, 1); // agosto (0-indexed)
   const now = new Date();
-  const years = now.getFullYear() - startDate.getFullYear();
+  let years = now.getFullYear() - startDate.getFullYear();
+  // Si aún no llega el mes/día de aniversario este año, resta uno
+  if (
+    now.getMonth() < startDate.getMonth() ||
+    (now.getMonth() === startDate.getMonth() &&
+      now.getDate() < startDate.getDate())
+  ) {
+    years--;
+  }
 
   return (
-    <section
-      // id="sobre-mi"
-      className="mx-auto grid min-h-screen max-w-6xl items-center gap-20 px-6 border-b mt-25 lg:mt-0"
-    >
+    <section className="mx-auto grid min-h-screen max-w-6xl items-center gap-20 px-6 border-b mt-25 lg:mt-0">
       <div>
         {/** Badge sobre mi estado actual */}
-        <Badge clasName="mb-6 w-fit">
+        <Badge
+          className="mb-6 w-fit animate-fade-up"
+          style={{ animationDelay: "0ms" }}
+        >
           <span className="size-1.5 rounded-full bg-success" />
           <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
             Disponible para nuevos retos
@@ -21,15 +29,24 @@ export async function Hero() {
         </Badge>
 
         {/** Mi nombre */}
-        <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+        <h1
+          className="text-5xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl animate-fade-up"
+          style={{ animationDelay: "80ms" }}
+        >
           Luis Gonzalo Flores Rodríguez
         </h1>
 
-        <div className="mt-1 mb-10 text-sm text-muted-foreground border-spacing-2 flex items-center">
+        <div
+          className="mt-1 mb-10 text-sm text-muted-foreground border-spacing-2 flex items-center animate-fade-up"
+          style={{ animationDelay: "160ms" }}
+        >
           Ingeniero de Software · Web & Móvil · {years}+ años{" "}
         </div>
 
-        <div className="flex space-x-10 justify-between pr-13">
+        <div
+          className="flex space-x-10 justify-between pr-13 animate-fade-up"
+          style={{ animationDelay: "240ms" }}
+        >
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground tracking-tight">
             Especializado en tecnologías actuales que forman un FullStack:
             Frontend, Backend y Base de datos, incluyendo también tecnologías
@@ -60,7 +77,10 @@ export async function Hero() {
           </div>
         </div>
 
-        <div className="mt-3 flex flex-wrap items-center gap-4">
+        <div
+          className="mt-3 flex flex-wrap items-center gap-4 animate-fade-up"
+          style={{ animationDelay: "320ms" }}
+        >
           <a
             href="#proyectos"
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90 font-mono"
@@ -73,7 +93,10 @@ export async function Hero() {
             <ArrowDown className="size-3" />
           </button>
         </div>
-        <div className="mt-2 flex flex-wrap items-center gap-4 font-mono">
+        <div
+          className="mt-2 flex flex-wrap items-center gap-4 font-mono animate-fade-up"
+          style={{ animationDelay: "400ms" }}
+        >
           <a
             href="https://www.linkedin.com/in/luis-flores-rodriguez/"
             target="_blank"

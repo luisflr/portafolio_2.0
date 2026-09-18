@@ -1,5 +1,6 @@
 import { getExperience } from "@/lib/data/experience";
 import { Terminal } from "../ui/terminal";
+import { FadeUp } from "../ui/fade-up";
 
 export async function AboutMe() {
   const experience = await getExperience();
@@ -8,11 +9,13 @@ export async function AboutMe() {
       id="sobre-mi"
       className="mx-auto flex flex-col min-h-screen max-w-6xl justify-center px-6 border-b"
     >
-      <h2 className="mb-8 text-sm tracking-tight text-muted-foreground font-mono">
-        02. SOBRE MÍ
-      </h2>
+      <FadeUp>
+        <h2 className="mb-8 text-sm tracking-tight text-muted-foreground font-mono">
+          02. SOBRE MÍ
+        </h2>
+      </FadeUp>
       <div className="grid grid-cols-1 xl:grid-cols-2 gap-5">
-        <div>
+        <FadeUp delay={100}>
           <p className="text-sm text-muted-foreground">
             Mi interés por la programación comenzó durante mis últimos años de
             colegio en{" "}
@@ -45,10 +48,10 @@ export async function AboutMe() {
             mediante cursos en plataformas como Platzi y Udemy para fortalecer
             mis conocimientos y seguir creciendo como desarrollador.
           </p>
-        </div>
-        <div className="flex order-2 lg:order-2 justify-center">
+        </FadeUp>
+        <FadeUp delay={220} className="flex order-2 lg:order-2 justify-center">
           <Terminal experience={experience} />
-        </div>
+        </FadeUp>
       </div>
     </section>
   );

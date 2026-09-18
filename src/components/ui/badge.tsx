@@ -1,16 +1,19 @@
-import { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 
 export function Badge({
   children,
-  clasName = "",
+  className = "",
+  style,
 }: {
   children: ReactNode;
-  clasName: string;
+  className: string;
+  style?: CSSProperties | undefined;
 }) {
   return (
     <span
       className={`inline-flex items-center gap-2 rounded-full 
-      border border-border bg-card/40 px-3 py-1 ${clasName}`}
+      border border-border bg-card/40 px-3 py-1 ${className}`}
+      style={style}
     >
       {children}
     </span>

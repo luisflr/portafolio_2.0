@@ -1,4 +1,5 @@
 import { STACKS } from "@/lib/stack-items";
+import { FadeUp } from "../ui/fade-up";
 
 export function Stack() {
   return (
@@ -7,14 +8,17 @@ export function Stack() {
       className="relative mx-auto grid min-h-screen max-w-6xl items-center px-6"
     >
       <section>
-        <h1 className="mb-10 text-sm tracking-tight text-muted-foreground font-mono">
-          04. Stack Tecnológico
-        </h1>
+        <FadeUp>
+          <h1 className="mb-10 text-sm tracking-tight text-muted-foreground font-mono">
+            04. Stack Tecnológico
+          </h1>
+        </FadeUp>
 
         <div className="grid grid-cols-2 gap-6 lg:grid-cols-3 mb-36">
           {STACKS.map((stack, i) => (
-            <div
+            <FadeUp
               key={i}
+              delay={100 * ((i + 1) / 2)}
               className="max-w-sm rounded-xl bg-background-card p-6 font-bold text-md flex items-center "
             >
               {stack.icon}
@@ -24,13 +28,17 @@ export function Stack() {
                   {stack.type}
                 </p>
               </div>
-            </div>
+            </FadeUp>
           ))}
         </div>
       </section>
       <footer className="absolute bottom-9 flex w-full justify-between text-xs text-muted-foreground">
-        <span>© 2026 Luis Flores Rodríguez</span>
-        <span>Arequipa, Perú</span>
+        <FadeUp delay={200}>
+          <span>© 2026 Luis Flores Rodríguez</span>
+        </FadeUp>
+        <FadeUp delay={300}>
+          <span>Arequipa, Perú</span>
+        </FadeUp>
       </footer>
     </div>
   );
