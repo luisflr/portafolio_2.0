@@ -49,7 +49,7 @@ export function Terminal({
   }
 
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-card font-mono text-sm shadow-2xl">
+    <div className="overflow-hidden rounded-xl border border-border bg-card font-mono text-sm shadow-2xl max-w-4xl">
       {/* Barra de título */}
       <div className="flex items-center gap-2 border-b border-border px-4 py-3">
         <span className="size-3 rounded-full bg-[#ff5f56]" />

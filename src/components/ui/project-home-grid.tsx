@@ -1,7 +1,6 @@
 "use client";
 
 import { ProjectItem, TypesProyect } from "@/types/content";
-import ProjectHomeCard from "@/components/ui/project-home-card";
 import { useState } from "react";
 import TypesProjectSwtich from "./types-project-switch";
 import { ProjectsShowcase } from "./projects-showcase";
