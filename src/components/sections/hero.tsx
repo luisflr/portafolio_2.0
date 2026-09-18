@@ -7,12 +7,11 @@ export async function Hero() {
   const startDate: Date = new Date(2021, 7, 1);
   const now = new Date();
   const years = now.getFullYear() - startDate.getFullYear();
-  const experience = null;
-  // const experience = await getExperience();
+  const experience = await getExperience();
   return (
     <section
       id="sobre-mi"
-      className="mx-auto grid min-h-screen max-w-6xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2 border-b"
+      className="mx-auto grid min-h-screen max-w-6xl grid-cols-1 items-center gap-20 px-6 lg:grid-cols-2 border-b mt-25 lg:mt-0"
     >
       <div className="order-1 lg:order-1">
         {/** Badge sobre mi estado actual */}
@@ -32,7 +31,7 @@ export async function Hero() {
           Ingeniero de Software · Web & Móvil · {years}+ años{" "}
         </p>
 
-        <p className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-md tracking-tight">
+        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground tracking-tight">
           Especializado en tecnologías actuales que forman un FullStack,
           incluyendo también tecnologías para el desarrollo móvil. <br />
           Manteniendo siempre un enfoque en buenas prácticas y Clean Code,
@@ -70,7 +69,7 @@ export async function Hero() {
             Github
           </a>
           <a
-            href="#proyectos"
+            href="mailto:luisflr1997@gmail.com"
             className="px-1 py-2.5 text-[13px] text-muted-foreground transition hover:scale-105 underline underline-offset-8 font-mono"
           >
             Email
