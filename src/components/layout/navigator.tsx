@@ -21,7 +21,7 @@ export function Nav() {
       </a>
 
       {/* Los puntos numerados, centrados verticalmente */}
-      <ul className="flex flex-col gap-6">
+      <ul className="flex flex-col gap-2">
         {SECTIONS.map((section, i) => {
           const isActive = activeId === section.id;
           const number = String(i + 1).padStart(2, "0");
@@ -30,7 +30,7 @@ export function Nav() {
               <a
                 href={`#${section.id}`}
                 aria-current={isActive ? "true" : undefined}
-                className="group/nav relative flex items-center"
+                className="group/nav relative flex items-center hover:bg-background-stack-icon p-2 rounded-lg"
               >
                 {/* Número: siempre visible */}
                 <span
@@ -40,13 +40,13 @@ export function Nav() {
                       : "text-muted-foreground group-hover/nav:text-foreground"
                   }`}
                 >
-                  {number}.
+                  {number}
                 </span>
 
                 {/* Label: en el DOM SIEMPRE (accesible), colapsado visualmente,
                     se expande en hover Y focus. El texto es "02. Experiencia Laboral". */}
                 <span
-                  className={`pointer-events-none absolute left-6 whitespace-nowrap rounded-md border border-border bg-card px-3 py-1.5 font-mono text-xs opacity-0 shadow-lg transition-opacity group-hover/nav:opacity-100 group-focus-visible/nav:opacity-100 ${
+                  className={`pointer-events-none absolute left-12 whitespace-nowrap rounded-md border border-border bg-card px-3 py-1.5 font-mono text-xs opacity-0 shadow-lg transition-opacity group-hover/nav:opacity-100 group-focus-visible/nav:opacity-100 ${
                     isActive ? "text-foreground" : "text-muted-foreground"
                   }`}
                 >

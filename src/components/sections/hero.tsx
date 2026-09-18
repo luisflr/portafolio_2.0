@@ -1,21 +1,19 @@
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { Badge } from "../ui/badge";
-import { getExperience } from "@/lib/data/experience";
-import { Terminal } from "../ui/terminal";
 
 export async function Hero() {
   const startDate: Date = new Date(2021, 7, 1);
   const now = new Date();
   const years = now.getFullYear() - startDate.getFullYear();
-  const experience = await getExperience();
+
   return (
     <section
-      id="sobre-mi"
-      className="mx-auto grid min-h-screen max-w-6xl grid-cols-1 items-center gap-20 px-6 lg:grid-cols-2 border-b mt-25 lg:mt-0"
+      // id="sobre-mi"
+      className="mx-auto grid min-h-screen max-w-6xl items-center gap-20 px-6 border-b mt-25 lg:mt-0"
     >
-      <div className="order-1 lg:order-1">
+      <div>
         {/** Badge sobre mi estado actual */}
-        <Badge clasName="mb-8 w-fit">
+        <Badge clasName="mb-6 w-fit">
           <span className="size-1.5 rounded-full bg-success" />
           <span className="font-mono text-xs uppercase tracking-wider text-muted-foreground">
             Disponible para nuevos retos
@@ -23,22 +21,46 @@ export async function Hero() {
         </Badge>
 
         {/** Mi nombre */}
-        <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-5xl md:text-5xl">
-          Luis Flores Rodríguez
+        <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl">
+          Luis Gonzalo Flores Rodríguez
         </h1>
 
-        <p className="my-4 text-[14px] text-primary border-spacing-2">
+        <div className="mt-1 mb-10 text-sm text-muted-foreground border-spacing-2 flex items-center">
           Ingeniero de Software · Web & Móvil · {years}+ años{" "}
-        </p>
+        </div>
 
-        <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground tracking-tight">
-          Especializado en tecnologías actuales que forman un FullStack,
-          incluyendo también tecnologías para el desarrollo móvil. <br />
-          Manteniendo siempre un enfoque en buenas prácticas y Clean Code,
-          disfruto asumir concretar y aprender con nuevos retos.
-        </p>
+        <div className="flex space-x-10 justify-between pr-13">
+          <p className="max-w-xl text-base leading-relaxed text-muted-foreground tracking-tight">
+            Especializado en tecnologías actuales que forman un FullStack:
+            Frontend, Backend y Base de datos, incluyendo también tecnologías
+            para el desarrollo móvil: Flutter, Riverpod, Fastlane. Me enfoco
+            siempre en aplicar buenas prácticas, Clean Code y principios SOLID
+            para un desarrollo óptimo y escalable. Además disfruto asumir
+            concretar y aprender con nuevos retos.
+          </p>
+          <div>
+            <ul className="font-mono divide-y divide-border text-sm border-t border-b">
+              <li className="py-3 text-muted-foreground flex items-center">
+                <div className="text-xs min-w-30">ROL:</div>
+                Ingeniero de Software · FullStack{" "}
+              </li>
+              <li className="py-3 text-muted-foreground flex items-center">
+                <span className="text-xs min-w-30">EXPERIENCIA:</span>
+                {years}+ años{" "}
+              </li>
+              <li className="py-3 text-muted-foreground flex items-center">
+                <span className="text-xs min-w-30">BASE:</span>
+                Arequipa, Perú · GMT-5 · remoto
+              </li>
+              <li className="py-3 text-muted-foreground flex items-center">
+                <span className="text-xs min-w-30">ESTADO:</span>
+                Abierto a nuevas oportunidades{" "}
+              </li>
+            </ul>
+          </div>
+        </div>
 
-        <div className="mt-9 flex flex-wrap items-center gap-4">
+        <div className="mt-3 flex flex-wrap items-center gap-4">
           <a
             href="#proyectos"
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90 font-mono"
@@ -51,7 +73,7 @@ export async function Hero() {
             <ArrowDown className="size-3" />
           </button>
         </div>
-        <div className="mt-4 flex flex-wrap items-center gap-4 font-mono">
+        <div className="mt-2 flex flex-wrap items-center gap-4 font-mono">
           <a
             href="https://www.linkedin.com/in/luis-flores-rodriguez/"
             target="_blank"
@@ -75,10 +97,6 @@ export async function Hero() {
             Email
           </a>
         </div>
-      </div>
-
-      <div className="order-2 lg:order-2">
-        <Terminal experience={experience} />
       </div>
     </section>
   );

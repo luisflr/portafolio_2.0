@@ -20,28 +20,29 @@ export function ProjectsShowcase({ projects }: { projects: ProjectItem[] }) {
       <ul className="flex flex-wrap gap-x-9 gap-y-4 justify-center">
         {projects.map((project, i) => {
           const isActive = i === selected;
-          const number = String(i + 1).padStart(2, "0");
           return (
             <li key={i}>
               <button
                 onClick={() => setSelected(i)}
                 aria-pressed={isActive}
-                className="flex items-center gap-3 text-left"
+                className="flex items-center gap-3 text-left hover:cursor-pointer group/project"
               >
                 <CircleDot
                   className={`size-3 mr-2 ${
-                    isActive ? "text-primary" : "text-muted-foreground"
+                    isActive
+                      ? "text-primary block"
+                      : "text-muted-foreground hidden"
                   }`}
                 />
                 <span className="flex flex-col">
                   <span
-                    className={`text-sm transition-colors  ${
+                    className={`text-sm group-hover/project:-translate-y-1 transition transform duration-300 ${
                       isActive ? "text-foreground" : "text-muted-foreground"
                     }`}
                   >
                     {project.title}
                   </span>
-                  <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground group-hover/project:-translate-y-1 transition transform duration-300">
                     | {PLATFORM_LABEL[project.platform]}
                   </span>
                 </span>
