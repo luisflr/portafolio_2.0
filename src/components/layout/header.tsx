@@ -9,7 +9,7 @@ export function Header() {
   const activeId = useScroll(SECTION_IDS);
 
   return (
-    <nav className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
+    <nav className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md block lg:hidden ">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <a
           href="#sobre-mi"

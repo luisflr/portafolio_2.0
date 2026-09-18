@@ -4,8 +4,9 @@ import { ProjectItem, TypesProyect } from "@/types/content";
 import ProjectHomeCard from "@/components/ui/project-home-card";
 import { useState } from "react";
 import TypesProjectSwtich from "./types-project-switch";
+import { ProjectsShowcase } from "./projects-showcase";
 
-const MAX_VISIBLE = 6;
+const MAX_VISIBLE = 5;
 
 function ProjectHomeGrid({ projects }: { projects: ProjectItem[] }) {
   const [activeTypeProject, setActiveTypeProject] = useState<TypesProyect>(
@@ -20,12 +21,9 @@ function ProjectHomeGrid({ projects }: { projects: ProjectItem[] }) {
   return (
     <>
       <div className="mb-12">
-        <p className="font-mono text-xs uppercase tracking-widest text-primary">
-          Proyectos visibles
-        </p>
-        <div className="flex justify-between items-center w-full">
-          <h2 className="text-4xl font-bold tracking-tight max-w-lg text-foreground">
-            Proyectos · {activeTypeProject}
+        <div className="flex justify-between w-full">
+          <h2 className="text-sm tracking-tight text-muted-foreground font-mono">
+            03. Proyectos · {activeTypeProject}
           </h2>
           <TypesProjectSwtich
             activeTypeProject={activeTypeProject}
@@ -35,16 +33,9 @@ function ProjectHomeGrid({ projects }: { projects: ProjectItem[] }) {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {currentProjects.map((project, i) => (
-          <article
-            key={`${project.typeProject}-${i}`}
-            className="flex flex-col overflow-hidden rounded-xl border border-border bg-background-card transition-colors hover:border-primary/50"
-          >
-            <ProjectHomeCard project={project} />
-          </article>
-        ))}
-      </div>
+      {currentProjects.length > 0 && (
+        <ProjectsShowcase key={activeTypeProject} projects={currentProjects} />
+      )}
     </>
   );
 }

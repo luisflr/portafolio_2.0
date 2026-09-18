@@ -40,7 +40,7 @@ export function Nav() {
                       : "text-muted-foreground group-hover/nav:text-foreground"
                   }`}
                 >
-                  {number}
+                  {number}.
                 </span>
 
                 {/* Label: en el DOM SIEMPRE (accesible), colapsado visualmente,
@@ -60,20 +60,6 @@ export function Nav() {
 
       {/* Acciones abajo */}
       <div className="flex flex-col items-center gap-4">
-        <a
-          href="https://github.com/tu-usuario"
-          aria-label="GitHub"
-          className="text-muted-foreground transition-colors hover:text-foreground"
-        >
-          <GithubIcon className="size-4" />
-        </a>
-        <a
-          href="https://linkedin.com/in/tu-usuario"
-          aria-label="LinkedIn"
-          className="text-muted-foreground transition-colors hover:text-foreground"
-        >
-          <LinkedinIcon className="size-4" />
-        </a>
         <ThemeToggle />
       </div>
     </nav>

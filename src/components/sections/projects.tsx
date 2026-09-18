@@ -10,7 +10,10 @@ export async function Projects() {
   const projects: ProjectItem[] = items.map(mapProjects);
 
   return (
-    <section id="proyectos" className="mx-auto max-w-6xl px-6 py-24 border-b">
+    <section
+      id="proyectos"
+      className="mx-auto max-w-5xl px-6 border-b min-h-screen py-24 justify-center flex flex-col"
+    >
       <ProjectHomeGrid projects={projects} />
     </section>
   );

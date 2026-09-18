@@ -2,26 +2,20 @@ import { STACKS } from "@/lib/stack-items";
 
 export function Stack() {
   return (
-    <section
+    <div
       id="stack"
-      className="mx-auto grid min-h-screen max-w-6xl items-center px-6 border-b"
+      className="relative mx-auto grid min-h-screen max-w-6xl items-center px-6"
     >
-      <div>
-        <p className="my-2 text-[14px] text-primary border-spacing-2">
-          Tecnologías Principales
-        </p>
-        <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-5xl md:text-5xl mb-2">
-          Stack Tecnológico
+      <section>
+        <h1 className="mb-10 text-sm tracking-tight text-muted-foreground font-mono">
+          04. Stack Tecnológico
         </h1>
-        <p className="max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-md tracking-tight mb-10">
-          Estos son las principales herramientas que he utilizado en mi día a
-          día durante todos estos años de trabajo
-        </p>
-        <div className="grid grid-cols-2 gap-3 lg:grid-cols-3">
+
+        <div className="grid grid-cols-2 gap-6 lg:grid-cols-3 mb-36">
           {STACKS.map((stack, i) => (
             <div
               key={i}
-              className="max-w-sm border rounded-xl bg-background-card p-6 font-bold text-md flex items-center "
+              className="max-w-sm rounded-xl bg-background-card p-6 font-bold text-md flex items-center "
             >
               {stack.icon}
               <div>
@@ -33,7 +27,11 @@ export function Stack() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
+      </section>
+      <footer className="absolute bottom-9 flex w-full justify-between text-xs text-muted-foreground">
+        <span>© 2026 Luis Flores Rodríguez</span>
+        <span>Arequipa, Perú</span>
+      </footer>
+    </div>
   );
 }
