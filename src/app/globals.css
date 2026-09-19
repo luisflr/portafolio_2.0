@@ -45,7 +45,7 @@
   --laravel-icon: #f57171;
   --django-icon: #34d399;
   --git-icon: #f9923c;
-  --ligth-blue: #0f1723;
+  --ligth-blue: #0e181f;
 }
 
 @theme inline {
@@ -83,9 +83,6 @@
   :root {
     interpolate-size: allow-keywords;
   }
-  html {
-    scroll-behavior: smooth;
-  }
   body {
     background: var(--color-background);
     color: var(--color-foreground);
@@ -98,6 +95,9 @@
   }
 
   @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
     .animate-fade-up {
       opacity: 0;
       animation: fade-up 0.6s ease-out forwards;

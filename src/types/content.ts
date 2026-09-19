@@ -45,6 +45,12 @@ export interface ProjectItem {
   codeUrl: string;
   order: number;
   platform: "mobile" | "web";
+  // Aún no en el backend — opcionales, fallback en el componente por ahora:
+  role?: string;
+  year?: string;
+  team?: string;
+  status?: string;
+  achievements?: string[];
 }
 
 export function derivePlatform(stack: string[]): "mobile" | "web" {

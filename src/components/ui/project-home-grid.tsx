@@ -1,43 +1,65 @@
 "use client";
 
-import { ProjectItem, TypesProyect } from "@/types/content";
 import { useState } from "react";
-import TypesProjectSwtich from "./types-project-switch";
+import type { ProjectItem } from "@/types/content";
 import { ProjectsShowcase } from "./projects-showcase";
-import { FadeUp } from "./fade-up";
 
-const MAX_VISIBLE = 5;
+const MAX_VISIBLE = 6;
 
-function ProjectHomeGrid({ projects }: { projects: ProjectItem[] }) {
-  const [activeTypeProject, setActiveTypeProject] = useState<TypesProyect>(
-    TypesProyect.work
-  );
+const CATEGORIES = [
+  { id: "Trabajo", label: "Trabajo" },
+  { id: "Personal", label: "Personal" },
+] as const;
 
-  const currentProjects = projects
-    .filter((item) => item.typeProject === activeTypeProject)
-    .sort((fi, si) => fi.order - si.order)
+export function ProjectHomeGrid({ projects }: { projects: ProjectItem[] }) {
+  const [active, setActive] = useState<string>(CATEGORIES[0].id);
+
+  const visible = projects
+    .filter((p) => p.typeProject === active)
     .slice(0, MAX_VISIBLE);
+  const activeLabel = CATEGORIES.find((c) => c.id === active)?.label ?? "";
 
   return (
-    <>
-      <FadeUp className="mb-12">
-        <div className="flex justify-between w-full">
-          <h2 className="text-sm tracking-tight text-muted-foreground font-mono">
-            03. Proyectos · {activeTypeProject}
-          </h2>
-          <TypesProjectSwtich
-            activeTypeProject={activeTypeProject}
-            handleSwitch={setActiveTypeProject}
-            projects={projects}
-          />
+    <div>
+      <div className="mb-10 flex items-center justify-between border-b border-border pb-4">
+        <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+          03. Proyectos · <span className="text-foreground">{activeLabel}</span>
+        </p>
+        <div className="flex items-center gap-6">
+          {CATEGORIES.map((cat) => {
+            const shown = Math.min(
+              projects.filter((p) => p.typeProject === cat.id).length,
+              MAX_VISIBLE
+            );
+            const isActive = active === cat.id;
+            return (
+              <button
+                key={cat.id}
+                onClick={() => setActive(cat.id)}
+                aria-pressed={isActive}
+                className={`font-mono text-xs uppercase tracking-wider transition-colors ${
+                  isActive
+                    ? "text-foreground underline underline-offset-8"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {cat.label}{" "}
+                <span className={isActive ? "text-primary" : "text-border"}>
+                  {String(shown).padStart(2, "0")}
+                </span>
+              </button>
+            );
+          })}
         </div>
-      </FadeUp>
+      </div>
 
-      {currentProjects.length > 0 && (
-        <ProjectsShowcase key={activeTypeProject} projects={currentProjects} />
+      {visible.length > 0 ? (
+        <ProjectsShowcase key={active} projects={visible} />
+      ) : (
+        <p className="text-muted-foreground">
+          No hay proyectos en esta categoría todavía.
+        </p>
       )}
-    </>
+    </div>
   );
 }
-
-export default ProjectHomeGrid;

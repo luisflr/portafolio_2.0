@@ -1,20 +1,21 @@
 import { getProjects } from "@/lib/data/projects";
-import { mapProjects } from "@/lib/serializers";
+import { FadeUp } from "@/components/ui/fade-up";
+import { ProjectHomeGrid } from "../ui/project-home-grid";
 import { ProjectItem } from "@/types/content";
-import ProjectHomeGrid from "@/components/ui/project-home-grid";
+import { mapProjects } from "@/lib/serializers";
 
 export async function Projects() {
   const items = await getProjects();
-
   if (!items || items.length === 0) return null;
-  const projects: ProjectItem[] = items.map(mapProjects);
 
+  const projects: ProjectItem[] = items
+    .map(mapProjects)
+    .sort((fi, si) => fi.order - si.order);
   return (
-    <section
-      id="proyectos"
-      className="mx-auto max-w-5xl px-6 border-b min-h-screen py-24 justify-center flex flex-col"
-    >
-      <ProjectHomeGrid projects={projects} />
+    <section id="proyectos" className="mx-auto max-w-6xl border-b px-6 py-24">
+      <FadeUp>
+        <ProjectHomeGrid projects={projects} />
+      </FadeUp>
     </section>
   );
 }
