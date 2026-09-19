@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http", // Railway te lo sirve por http, no https — ojo con esto
+        protocol: "https", // Railway te lo sirve por http, no https — ojo con esto
         hostname: "backendportafolio20-production.up.railway.app",
         pathname: "/media/**",
       },
