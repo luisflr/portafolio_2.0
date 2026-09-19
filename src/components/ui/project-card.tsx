@@ -18,7 +18,12 @@ export function ProjectCard({ project }: { project: ProjectItem }) {
         </div>
       )}
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="text-lg font-bold text-foreground">{project.title}</h3>
+        <div className="flex justify-between">
+          <h3 className="text-lg font-bold text-foreground">{project.title}</h3>
+          <h3 className="text-sm font-bold text-muted-foreground ">
+            {project.year}
+          </h3>
+        </div>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
           {project.description}
         </p>

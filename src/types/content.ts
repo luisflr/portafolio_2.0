@@ -4,15 +4,6 @@ export enum TypesProyect {
   work = "Trabajo",
   personal = "Personal",
 }
-const MOBILE_SIGNALS = [
-  "flutter",
-  "ionic",
-  "react native",
-  "swift",
-  "kotlin",
-  "android",
-  "capacitor",
-];
 export interface ExperienceItem {
   role: string;
   company: string;
@@ -50,14 +41,4 @@ export interface ProjectItem {
   year?: string;
   team?: string;
   status?: string;
-  achievements?: string[];
-}
-
-export function derivePlatform(stack: string[]): "mobile" | "web" {
-  const normalized = stack.map((s) => s.toLowerCase());
-  return normalized.some((tech) =>
-    MOBILE_SIGNALS.some((sig) => tech.includes(sig))
-  )
-    ? "mobile"
-    : "web";
 }

@@ -88,10 +88,13 @@ export async function Hero() {
             Ver Proyectos
             <ArrowRight className="size-4 group-hover/hero:translate-x-1 transition transform duration-200" />
           </a>
-          <button className="inline-flex items-center gap-2 rounded-lg bg-background-stack-icon px-5 py-3 text-sm font-bold text-foreground hover:opacity-90 cursor-pointer font-mono hover:scale-105 transition transform duration-300">
-            Descargar CV
+          <a
+            href="/cv-luis-flores.pdf"
+            className="inline-flex items-center gap-2 rounded-lg bg-background-stack-icon px-5 py-3 text-sm font-bold text-foreground hover:opacity-90 cursor-pointer font-mono hover:scale-105 transition transform duration-300"
+          >
+            Ver CV
             <ArrowDown className="size-3" />
-          </button>
+          </a>
         </div>
         <div
           className="mt-2 flex flex-wrap items-center gap-4 font-mono animate-fade-up"

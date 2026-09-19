@@ -23,3 +23,7 @@ export function getYearsOfExperience(): number {
   }
   return years;
 }
+
+export function getCurrentYear(): number {
+  return new Date().getFullYear();
+}
