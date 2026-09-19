@@ -1,4 +1,4 @@
-import { ExperienceItem, ProjectItem, derivePlatform } from "@/types/content";
+import { ExperienceItem, ProjectItem } from "@/types/content";
 import { formatDate } from "./utils";
 
 export function mapExperienceItem(backendItem: any): ExperienceItem {
@@ -24,6 +24,10 @@ export function mapProjects(backendItem: any): ProjectItem {
     demoUrl: backendItem.demo_url,
     codeUrl: backendItem.code_url,
     order: backendItem.order,
-    platform: derivePlatform(backendItem.stack),
+    platform: backendItem.platform,
+    role: backendItem.role,
+    team: backendItem.team,
+    status: backendItem.status,
+    year: backendItem.year,
   };
 }

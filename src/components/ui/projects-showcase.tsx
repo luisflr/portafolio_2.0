@@ -1,29 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Code2 } from "lucide-react";
 import type { ProjectItem } from "@/types/content";
 import BadgeStack from "./badge-stack";
 import { useRouter } from "next/navigation";
+import { getCurrentYear } from "@/lib/utils";
 
-const PLATFORM_LABEL: Record<ProjectItem["platform"], string> = {
-  mobile: "Mobile",
-  web: "Web",
+const SECTION = {
+  periodo: `2021 — ${getCurrentYear()}`,
+  stackBase: "React · Laravel · Django",
 };
-
-// Fallback mientras subes estos campos al backend.
-const PLACEHOLDER = {
-  role: "Full-Stack dev",
-  year: "2025",
-  team: "—",
-  status: "En producción",
-  achievements: ["Detalle de lo realizado (pendiente de subir al backend)."],
-};
-
-// Stats de sección (no por proyecto). Hardcodeadas por ahora.
-const SECTION = { periodo: "2022 — 2025", stackBase: "React · .NET" };
 
 export function ProjectsShowcase({ projects }: { projects: ProjectItem[] }) {
   const [selected, setSelected] = useState(0);
@@ -56,9 +44,7 @@ export function ProjectsShowcase({ projects }: { projects: ProjectItem[] }) {
         <ul className="flex flex-row flex-wrap gap-2 lg:flex-col lg:gap-0">
           {projects.map((project, i) => {
             const isActive = i === selected;
-            const tag = `${PLATFORM_LABEL[project.platform]} · ${
-              project.year ?? PLACEHOLDER.year
-            }`;
+            const tag = `${project.platform} · ${project.year ?? "2025"}`;
             return (
               <li key={i}>
                 <button
@@ -115,16 +101,16 @@ export function ProjectsShowcase({ projects }: { projects: ProjectItem[] }) {
         <div className="flex gap-3">
           <h3 className="text-3xl font-bold text-foreground">{active.title}</h3>
           <span className="rounded-md px-2 py-1 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-            App {PLATFORM_LABEL[active.platform]}
+            App {active.platform}
           </span>
         </div>
 
         <dl className="mt-8 grid grid-cols-2 gap-6 border-b border-border pb-6 sm:grid-cols-4">
           {[
-            { label: "Rol", value: active.role ?? PLACEHOLDER.role },
-            { label: "Año", value: active.year ?? PLACEHOLDER.year },
-            { label: "Equipo", value: active.team ?? PLACEHOLDER.team },
-            { label: "Estado", value: active.status ?? PLACEHOLDER.status },
+            { label: "Rol", value: active.role },
+            { label: "Año", value: active.year },
+            { label: "Equipo", value: active.team },
+            { label: "Estado", value: active.status },
           ].map((m) => (
             <div key={m.label}>
               <dt className="font-mono text-[10px] uppercase tracking-wider text-muted-foreground">

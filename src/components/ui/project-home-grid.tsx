@@ -37,7 +37,7 @@ export function ProjectHomeGrid({ projects }: { projects: ProjectItem[] }) {
                 key={cat.id}
                 onClick={() => setActive(cat.id)}
                 aria-pressed={isActive}
-                className={`font-mono text-xs uppercase tracking-wider transition-colors ${
+                className={`font-mono text-xs uppercase tracking-wider transition-colors hover:cursor-pointer ${
                   isActive
                     ? "text-foreground underline underline-offset-8"
                     : "text-muted-foreground hover:text-foreground"
