@@ -121,7 +121,7 @@ export function ProjectsShowcase({ projects }: { projects: ProjectItem[] }) {
           ))}
         </dl>
 
-        <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div className="mt-8 grid gap-8">
           <div>
             <p className="leading-relaxed text-muted-foreground text-sm">
               {active.description}
@@ -134,34 +134,6 @@ export function ProjectsShowcase({ projects }: { projects: ProjectItem[] }) {
               {active.stack.map((tech) => (
                 <BadgeStack label={tech} key={tech} />
               ))}
-            </div>
-          </div>
-
-          <div className="flex flex-col gap-2">
-            <div
-              style={{ viewTransitionName: "project-image" }}
-              className="relative aspect-4/3 overflow-hidden rounded-xl border border-border bg-card"
-            >
-              {active.image ? (
-                <Image
-                  src={active.image}
-                  alt={active.title}
-                  fill
-                  sizes="(max-width:1024px) 100vw, 33vw"
-                  className="object-cover"
-                />
-              ) : (
-                <div className="grid h-full place-items-center font-mono text-sm text-muted-foreground">
-                  {active.title}
-                </div>
-              )}
-            </div>
-            <div className="flex justify-between font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
-              <span>{active.title}</span>
-              <span className="tabular-nums">
-                {String(selected + 1).padStart(2, "0")} /{" "}
-                {String(total).padStart(2, "0")}
-              </span>
             </div>
           </div>
         </div>
