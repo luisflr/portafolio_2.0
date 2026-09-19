@@ -20,7 +20,7 @@ export function mapProjects(backendItem: any): ProjectItem {
     description: backendItem.description,
     stack: backendItem.stack,
     typeProject: backendItem.type_project,
-    image: backendItem.image,
+    image: backendItem.image_url,
     demoUrl: backendItem.demo_url,
     codeUrl: backendItem.code_url,
     order: backendItem.order,
