@@ -44,7 +44,7 @@ export async function Hero() {
         </div>
 
         <div
-          className="flex space-x-10 justify-between pr-13 animate-fade-up"
+          className="grid lg:grid-cols-2 gap-10 justify-between pr-13 animate-fade-up"
           style={{ animationDelay: "240ms" }}
         >
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground tracking-tight">
