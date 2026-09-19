@@ -6,25 +6,19 @@ import BadgeStack from "./badge-stack";
 export function ProjectCard({ project }: { project: ProjectItem }) {
   return (
     <article className="flex flex-col overflow-hidden rounded-xl bg-background-card transition-colors hover:border-primary/50">
-      {project.image && (
-        <div className="relative aspect-video overflow-hidden">
-          <Image
-            src={project.image}
-            alt={`image-${project.title}`}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover"
-          />
-        </div>
-      )}
       <div className="flex flex-1 flex-col p-6">
         <div className="flex justify-between">
-          <h3 className="text-lg font-bold text-foreground">{project.title}</h3>
+          <div className="flex">
+            <h3 className="text-lg text-foreground">{project.title}</h3>
+            <span className="ml-4 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+              {project.platform}
+            </span>
+          </div>
           <h3 className="text-sm font-bold text-muted-foreground ">
             {project.year}
           </h3>
         </div>
-        <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">
+        <p className="mt-6 flex-1 text-sm leading-relaxed text-muted-foreground">
           {project.description}
         </p>
         <div className="mt-4 flex flex-wrap gap-2.5">

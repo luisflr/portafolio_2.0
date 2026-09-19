@@ -25,3 +25,8 @@ export const SOCIALS = [
   },
   { label: "Email", href: "mailto:luisflr1997@gmail.com", Icon: Mail },
 ];
+
+export const CATEGORIES = [
+  { id: "Trabajo", label: "Trabajo" },
+  { id: "Personal", label: "Personal" },
+];
