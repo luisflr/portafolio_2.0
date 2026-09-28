@@ -7,6 +7,7 @@ import { Nav } from "@/components/layout/navigator";
 import { SocialRail } from "@/components/layout/social-rail";
 import AboutMe from "@/components/sections/about-me";
 import { Spotlight } from "@/components/ui/spot-light";
+import { Analytics } from "@vercel/analytics/next";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Nav />
       <SocialRail />
       <main className="lg:pl-20">
+        <Analytics />
         <Hero />
         <AboutMe />
         <Experience />
