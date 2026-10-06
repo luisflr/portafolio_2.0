@@ -1,7 +1,7 @@
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { Badge } from "../ui/badge";
 
-export async function Hero() {
+export function Hero() {
   const startDate = new Date(2021, 7, 1); // agosto (0-indexed)
   const now = new Date();
   let years = now.getFullYear() - startDate.getFullYear();
